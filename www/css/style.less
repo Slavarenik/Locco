@@ -9,6 +9,33 @@
 @mainColor: #0099e6;
 
 /*----------------------------------------
+	TYPOGRAPHY
+----------------------------------------*/
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 40px;
+	color: #474747;
+}
+p{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: #474747;
+	line-height: 1.5em;
+}
+a{
+	color: @mainColor;
+}
+.btn{
+	border: 1px solid #c7d7e5;
+	border-radius: 0;
+	padding: 14px 30px;
+	margin: 15px 0;
+}
+.btn.btn-primary{
+	background: @mainColor;
+}
+/*----------------------------------------
 	BODY, MAIN
 ----------------------------------------*/
 body{
@@ -24,6 +51,7 @@ body{
 header{
 	background: #fff;
 	.box-shadow( 0 0 5px rgba(0,0,0,0.3));
+	position: relative;z-index: 999;
 
 	.logo{
 		padding: 32px 15px;
@@ -177,6 +205,57 @@ header{
 }
 
 
+/*----------------------------------------
+	MAIN-SLIDER
+----------------------------------------*/
+.main-slider-wrapper{
+	.main-slider{
+		.slide{
+			outline: none;
+			padding: 120px 0;
+			position: relative;
+
+			.slider-image{
+				display: none;
+			}
+			.desc{
+				padding: 10px 30px;
+				background: rgba(255, 255, 255, 0.95);
+			}
+		}
+		.slick-arrow{
+			border: none;
+			text-indent: 999px;
+			overflow: hidden;
+			width: 70px;
+			height: 70px;
+			background: url(../images/main-slider-controls.png) no-repeat;
+			outline: none;
+			position: absolute;
+			z-index: 999;
+			top: 50%;
+			margin-top: -35px;
+			opacity: 0;
+			.transition (opacity, 0.3s);
+		}
+		.slick-prev{
+			left: 5%;
+			background-position: 0 0;
+		}
+		.slick-next{
+			right: 5%;
+			background-position: -70px 0;
+		}
+
+		&:hover{
+			.slick-arrow{
+				opacity: 0.7;
+				.transition (opacity, 0.3s);
+			}
+		}
+	}
+}
+
 
 
 /*----------------------------------------
@@ -296,6 +375,18 @@ header{
 		}
 		.soc-media{
 			display: none;
+		}
+	}
+
+
+	.main-slider-wrapper{
+		.main-slider{
+			.slide{
+				padding: 50px 0;
+			}
+			.slick-arrow{
+				display: none !important;
+			}
 		}
 	}
 
