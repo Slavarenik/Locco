@@ -1,0 +1,365 @@
+/*
+	Author: ThePretender
+	Template: locco
+	URL: http://themeforest.net/user/thepretender
+*/
+
+
+/*Global less variebles*/
+@mainColor: #0099e6;
+
+/*----------------------------------------
+	BODY, MAIN
+----------------------------------------*/
+body{
+	background: #fff;
+}
+.main{
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*----------------------------------------
+	HEADER
+----------------------------------------*/
+header{
+	background: #fff;
+	.box-shadow( 0 0 5px rgba(0,0,0,0.3));
+
+	.logo{
+		padding: 32px 15px;
+		a{
+			display: inline-block;
+		}
+	}
+
+	.navbar-toggle{
+		border: 1px solid @mainColor;
+		outline: none;
+		top: 34px;
+		right: 15px;
+		position: absolute;
+		z-index: 999;
+
+		.icon-bar{
+			display: block;
+			width: 22px;
+			height: 2px;
+			border-radius: 1px;
+			background: @mainColor;
+		}
+	}
+
+	.menu{
+		.navbar-collapse{
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li{
+				display: block;
+				float: left;
+				position: relative;
+				a{
+					padding: 48px 15px;
+					border: 1px solid transparent;
+					font-size: 15px;
+					font-weight: 600;
+					text-transform: uppercase;
+					color: @mainColor;
+					text-decoration: none;
+					display: block;
+					float: left;
+				}
+
+				&.active,
+				&:hover{
+					a{
+						border: 1px solid #c7d7e4;
+						background: @mainColor;
+						color: #fff;
+					}
+
+					ul{
+						display: block;
+						li{
+							a{
+								border: none;
+							}
+						}
+					}
+				}
+
+				ul{
+					display: none;
+					position: absolute;
+					padding: 10px 0;
+					top: 119px;
+					width: 200px;
+					background: @mainColor;
+
+					li{
+						float: none;
+						a{
+							border: none;
+							float: none;
+							font-weight: 300;
+							display: block;
+							padding: 0 15px;
+							margin: 15px 0;
+							font-size: 13px;
+							text-transform: none;
+							color: #fff;
+
+							&.active,
+							&:hover{
+								border: none;
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+
+			li.has-submenu{
+				a{
+					background: url(../images/submenu-arrow.png) no-repeat center 70px ;
+				}
+
+				&:hover{
+					a{
+						background: url(../images/submenu-arrow-h.png) no-repeat center 70px @mainColor;
+					}
+				}
+			}
+		}
+	}
+
+	.soc-media{
+		ul{
+			list-style: none;
+			overflow: hidden;
+			padding: 0;
+			margin: 45px 0 0 0;
+
+			li{
+				float: left;
+				a{
+					margin-left: 4px;
+					float: left;
+					display: block;
+					width: 26px;
+					height: 26px;
+					background: url(../images/soc.png) no-repeat;
+				}
+
+				&.facebook{
+					a{
+						background-position: 0 0;
+					}
+				}
+				&.twitter{
+					a{
+						background-position: -26px 0;
+					}
+				}
+				&.linkedin{
+					a{
+						background-position: -52px 0;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+/*----------------------------------------
+	1200 width
+----------------------------------------*/
+@media screen and (max-width: 1200px) {
+
+	header{
+		.menu{
+			ul{
+				li{
+					a{
+						font-size: 13px;
+					}
+					ul{
+						top: 116px;
+						li{
+							a{
+								font-size: 12px;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+}
+
+
+/*----------------------------------------
+	992 width
+----------------------------------------*/
+@media screen and (max-width: 992px) {
+
+	header{
+		.logo{
+			padding: 31px 15px;
+		}
+		.menu{
+			ul{
+				li{
+					a{
+						font-size: 12px;
+						padding: 38px 5px;
+					}
+					ul{
+						top: 95px;
+						padding: 5px 0;
+						li{
+							a{
+								font-size: 12px;
+							}
+						}
+					}
+				}
+				li.has-submenu{
+					a{
+						background: url(../images/submenu-arrow.png) no-repeat center 60px ;
+					}
+
+					&:hover{
+						a{
+							background: url(../images/submenu-arrow-h.png) no-repeat center 60px @mainColor;
+						}
+					}
+				}
+			}
+		}
+		.soc-media{
+			ul{
+				margin: 35px 0 0 0;
+			}
+		}
+	}
+
+}
+
+
+/*----------------------------------------
+	767 width
+----------------------------------------*/
+@media screen and (max-width: 767px) {
+
+	header{
+		.logo{
+			padding: 31px 15px 15px 15px;
+		}
+		.menu{
+			padding-bottom: 20px;
+			ul{
+				li{
+					float: none;
+					a{
+						border: 1px solid #c7d7e4;
+						margin: 1px 0;
+						float: none;
+						display: block;
+						font-size: 12px;
+						padding: 10px;
+					}
+
+					ul{
+						display: block;
+						position: relative;
+						top: 0;
+						width: auto;
+						li{
+							a{
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+		.soc-media{
+			display: none;
+		}
+	}
+
+}
+
+
+/*mixed functions*/
+
+/*border-radius*/
+.full-border-radius (@count) {
+	border-radius: @count;
+	-moz-border-radius: @count;
+	-webkit-border-radius: @count;
+}
+.top-border-radius (@count) {
+	border-radius: @count @count 0 0;
+	-moz-border-radius: @count @count 0 0;
+	-webkit-border-radius: @count @count 0 0;
+}
+.bottom-border-radius (@count) {
+	border-radius: 0 0 @count @count;
+	-moz-border-radius: 0 0 @count @count;
+	-webkit-border-radius: 0 0 @count @count;
+}
+.left-border-radius (@count) {
+	border-radius: @count 0 0 @count;
+	-moz-border-radius: @count 0 0 @count;
+	-webkit-border-radius: @count 0 0 @count;
+}
+.right-border-radius(@count){
+	border-radius: 0 @count @count 0;
+	-moz-border-radius: 0 @count @count 0;
+	-webkit-border-radius: 0 @count @count 0;
+}
+/*background-gradient*/
+.background-gradient (@colorTop, @colorBot) {
+	background: @colorTop;
+	background-image: -o-linear-gradient(bottom, @colorTop 0%, @colorBot 100%);
+	background-image: -moz-linear-gradient(bottom, @colorTop 0%, @colorBot 100%);
+	background-image: -webkit-linear-gradient(bottom, @colorTop 0%, @colorBot 100%);
+	background-image: -ms-linear-gradient(bottom, @colorTop 0%, @colorBot 100%);
+	background-image: linear-gradient(to bottom, @colorTop 0%, @colorBot 100%);
+}
+
+/*transition*/
+.transition (@prop, @timeout) {
+	-o-transition: @prop @timeout ease;
+	-ms-transition: @prop @timeout ease;
+	-moz-transition: @prop @timeout ease;
+	-webkit-transition: @prop @timeout ease;
+}
+
+/*box-shadow*/
+/*box-shadow: 0 0 10px rgba(0,0,0,0.5)*/
+.box-shadow(@params) {
+	-webkit-box-shadow: @params;
+	-moz-box-shadow: @params;
+	box-shadow: @params;
+}
+
+/*text-shadow*/
+/*text-shadow: 1px 1px 2px black*/
+.text-shadow(@params) {
+	-webkit-text-shadow: @params;
+	-moz-text-shadow: @params;
+	text-shadow: @params;
+}
