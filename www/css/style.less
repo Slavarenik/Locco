@@ -26,6 +26,24 @@ p{
 a{
 	color: @mainColor;
 }
+p.title{
+	font-size: 30px;
+	font-weight: 300;
+	font-style: italic;
+	text-align: center;
+	margin: 50px 0;
+
+	span{
+		font-weight: 800;
+		color: @mainColor;
+		margin: 0 5px;
+	}
+}
+p.subtitle{
+	font-size: 21px;
+	font-weight: 300;
+	text-align: center;
+}
 .btn{
 	border: 1px solid #c7d7e5;
 	border-radius: 0;
@@ -51,7 +69,8 @@ body{
 header{
 	background: #fff;
 	.box-shadow( 0 0 5px rgba(0,0,0,0.3));
-	position: relative;z-index: 999;
+	position: relative;
+	z-index: 999;
 
 	.logo{
 		padding: 32px 15px;
@@ -256,6 +275,25 @@ header{
 	}
 }
 
+
+/*----------------------------------------
+	WORK-PROCESS
+----------------------------------------*/
+.work-process{
+	.item{
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.thumbnail{
+			margin-bottom: 0;
+			margin: 0 auto;
+			box-shadow: 0 0 5px rgba(0,0,0,0.1);
+		}
+		.title{
+			margin: 10px 0;
+			color: @mainColor;
+		}
+	}
+}
 
 
 /*----------------------------------------
